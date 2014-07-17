@@ -250,6 +250,37 @@ a {
 </head>
 
 <body>
+
+<!-- friend sreen -->
+<section id="friendScreen">
+<div id="wrapper">
+
+		<section id="profileArea">
+
+		<div id="namePic">
+			<img class="profPicture" src="https://raw.githubusercontent.com/MithilaTople/Mediaroom_hackathon/master/client/images/Friend2.jpg"/>
+			<div id="name">Person</div>
+		</div>
+
+			<img class="social" src="https://raw.githubusercontent.com/MithilaTople/Mediaroom_hackathon/master/client/images/twitter.png">
+			<img class="social" src="https://raw.githubusercontent.com/MithilaTople/Mediaroom_hackathon/master/client/images/facebook.png">
+			<img class="social" src="https://raw.githubusercontent.com/MithilaTople/Mediaroom_hackathon/master/client/images/Google-plus.png">
+		</section>
+		<div id="mid"></div>
+
+		<div id="filmStrip" class="flexContainer overflow">
+			<div id="filmStripItem0" class="filmStripItem active vertical fixedFlexItem flexContainer">
+				<img src="./images/Friend1.jpg" class="fixedFlexItem"></img>
+				<div id="friendContainer0" class="friendContainer fixedFlexItem">
+					<p id="friendName0" class="friendName">SmartQ</p>
+				</div>
+			</div>	
+		</div>
+
+
+		</div>
+</section>
+
 <div id="topMenu" class="flexContainer justifySpaceBetween">
 
 	<img src="./images/Untitled-5.png"></img>
@@ -314,48 +345,17 @@ a {
 	</div>	
 </div>
 
-<!-- friend sreen -->
-<section id="friendScreen">
-<div id="wrapper">
-
-		<section id="profileArea">
-
-		<div id="namePic">
-			<img class="profPicture" src="https://raw.githubusercontent.com/MithilaTople/Mediaroom_hackathon/master/client/images/Friend2.jpg"/>
-			<div id="name">Person</div>
-		</div>
-
-			<img class="social" src="https://raw.githubusercontent.com/MithilaTople/Mediaroom_hackathon/master/client/images/twitter.png">
-			<img class="social" src="https://raw.githubusercontent.com/MithilaTople/Mediaroom_hackathon/master/client/images/facebook.png">
-			<img class="social" src="https://raw.githubusercontent.com/MithilaTople/Mediaroom_hackathon/master/client/images/Google-plus.png">
-		</section>
-		<div id="mid"></div>
-
-		<div id="filmStrip" class="flexContainer overflow">
-			<div id="filmStripItem0" class="filmStripItem active vertical fixedFlexItem flexContainer">
-				<img src="./images/Friend1.jpg" class="fixedFlexItem"></img>
-				<div id="friendContainer0" class="friendContainer fixedFlexItem">
-					<p id="friendName0" class="friendName">SmartQ</p>
-				</div>
-			</div>	
-		</div>
-
-
-		</div>
-</section>
-
-
 <script>
 	$(document).ready(function(){
-		  $('.showFriend').click(function(){
-  	$('#friendScreen').slideToggle(500); //toggle(effect, options, duration);
- 	 });
+		$('.showFriend').click(function(){
+  			$('#friendScreen').slideToggle(500); //toggle(effect, options, duration);
+ 		});
+
+		$('#friendScreen').click(function() {
+   		  $('#friendScreen').hide();
+   		});
 	});//end of document
 </script>
 </body>
 
-	<body>
-	<!--- Account ID confirmation-->
-
-	</body>
 </html>
