@@ -4,7 +4,10 @@
 <head>
 <style>
 
-</style>
+body {
+	color: white;
+	background-color:black;
+}
 
 .noDisplay {
 	display: none;
@@ -85,16 +88,40 @@ a {
 	-webkit-align-items: flex-end;
 	-ms-align-items: flex-end;
 } 
+.spacingBlock {
+	height:40%;
+	width:40%;
+}
 
+.largeText {
+	font-size:40px;
+	color: white;
+	width:100%
+}
+
+.underlineWhite {
+	border-bottom: solid 1px white;
+}
+
+.active {
+	border-bottom: solid 3px blue;
+}
+</style>
 </head>
 
 <body>
-<div id="topMenu" class="flexContainer vertical justifySpaceBetween">
-	<img src="./images/falicon.ico">YourTv</img>
+<div id="topMenu" class="flexContainer justifySpaceBetween">
+	<div class="fixedFlexItem">
+		<img src="./images/favicon.ico">YourTv</img>
+	</div>
 	<div class="fixedFlexItem">Mediaroom</div>
 	<div class="fixedFlexItem">Search</div>
 </div>
-		
+<div class="spacingBlock">
+</div>
+<div id="flexContainer">
+	<div class="largeText active flexItem">You</div>
+</div>
 
 </div>
 <div id="tabContainer" class="flexContainer justifySpaceBetween">
