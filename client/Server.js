@@ -52,13 +52,13 @@ http.createServer(function (req, res) {
   var query = holder.query;
   if(req.method === 'GET' && pathname === '/') {
     console.log("--------- Sending Home Page ---------");
-		res.writeHeader(200, {"Content-Type": "text/html", "Cache-control": "private, max-age=60000"});
+		res.writeHeader(200, {"Content-Type": "text/html"});
         res.end(fs.readFileSync('Hackathon_MainScreen.html')); // changed it here
         return;
   } 
   else if(req.method === 'GET' && pathname ==! '/') {
     console.log("--------- Sending Home Page ---------");
-    res.writeHeader(200, {"Content-Type": "text/html", "Cache-control": "private, max-age=60000"});
+    res.writeHeader(200, {"Content-Type": "text/html"});
               res.end(fs.readFileSync(pathname)); // changed it here
               return;
   }
@@ -66,7 +66,7 @@ http.createServer(function (req, res) {
               console.log("--------- Sending Resource ---------");
 
               
-              res.writeHeader(200, {"Content-Type": fileToMIME[req.url.split('.').pop()],  "Cache-control": "private, max-age=60000"});
+              res.writeHeader(200, {"Content-Type": fileToMIME[req.url.split('.').pop()]});
               
               res.end(fs.readFileSync('.' + req.url));
               return;
