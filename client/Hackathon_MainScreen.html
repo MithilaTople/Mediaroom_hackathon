@@ -1,11 +1,18 @@
 <!doctype>
 
-
 <head>
+		<meta charset="UTF-8">
+
+		<!-- device width -->
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.0/jquery-ui.min.js"></script>
+
+		
 <style>
 
 body {
 	color: white;
+	font-family: "Helvetica Neue", Helvetica, Sans-serif;
 	background-image: url(./images/background1-01.png)
 }
 
@@ -133,13 +140,19 @@ a {
 }
 
 .friendContainer {
-	background-color: #ABABAB;
+	background-color: #545454;
+	padding-left: 10px;
+	padding-top: 5px;
 	color: white;
 }
 
 #filmStrip {
 	width: 100%;
 	padding-bottom: 25px;
+}
+
+#socialTypes {
+	margin-bottom: 40px;
 }
 
 .friendName {
@@ -149,15 +162,141 @@ a {
 
 .friendInfo {
 	font-size:10px;
-	margin: 0px 0px 20px 0px;
+	margin: 0px 0px 20px 5px;
 }
 
+
+#wrapper, #queueScreen{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+  background-color: rgba(181,181,181,.5);
+}
+
+#namePic {
+	margin: 20px 0px 10px 0px;
+}
+
+#popupContainer, #queueScreenInner {
+	background-color: rgba(45,45,45,1);
+	margin-top: 5%;
+	margin-left: 30%;
+	margin-right: 30%;
+	overflow: hidden;
+	padding-left: 5px;
+}
+
+#name {
+	padding-left: 5px;
+}
+
+.playListImage {
+	height: 140px;
+	width: 160px;
+}
 </style>
 </head>
 
 <body>
-<div id="topMenu" class="flexContainer justifySpaceBetween">
 
+<!-- queue screen -->
+<div id="queueScreen" onclick="$('#queueScreen').toggleClass('noDisplay');" class="noDisplay" >
+<div id="queueScreenInner" class="flexContainer vertical">
+	<div class="flexContainer fixedFlexItem alignEnd" style="margin: 5px 0px 5px 3px">
+		<div style="font-size:20px; margin-right: 10px;">SmartQ</div>
+		<div style="font-size:10px;"> Enjoy your exclussive channel based on your history!</div>
+	</div>
+	<div class="flexContainer fixedFlexItem">
+		<div class="flexContainer fixedFlexItem vertical">
+			<img src="./images/p10475136_b_h6_ab.jpg" class="fixedFlexItem playListImage"></img>
+		</div>
+		<div class="flexContainer fixedFlexItem vertical" style="margin-left:10px">
+			<div style="font-size:20px">Next Great Baker</div>
+			<p style="width: 300px; margin-top:5px;"> The show features contestants particpating in challenges that test their baking and decorating skills. Eachweek, a contestant will be eliminated; the last contestant standing will win a grand prize package.</p>
+		</div>
+	</div>
+	<div style="margin-top:40px; margin-bottom: 5px;">Next in SmartQ</div>
+	<div id="filmStrip" class="flexContainer overflow">
+		<a href="#!" class="fixedFlexItem">
+			<div id="filmStripItem0" class="filmStripItem active vertical fixedFlexItem flexContainer">
+				<img src="./images/p10475136_b_h6_ab.jpg" class="fixedFlexItem playListImage"></img>
+				<div id="friendContainer0" class="friendContainer fixedFlexItem">
+					<p id="friendName0" class="friendName">Silicon Valley</p>
+				</div>
+			</div>	
+		</a>
+		<a href="#!" class="fixedFlexItem">
+			<div id="filmStripItem0" class="filmStripItem vertical fixedFlexItem flexContainer">
+				<img src="./images/p10555214_b_h6_ab.jpg" class="fixedFlexItem playListImage"></img>
+				<div id="friendContainer0" class="friendContainer fixedFlexItem">
+					<p id="friendName0" class="friendName">John Oliver</p>
+				</div>
+			</div>
+		</a>
+		<a href="#!" class="fixedFlexItem">
+			<div id="filmStripItem0" class="filmStripItem vertical fixedFlexItem flexContainer">
+				<img src="./images/p10555214_b_h6_ab.jpg" class="fixedFlexItem playListImage"></img>
+				<div id="friendContainer0" class="friendContainer fixedFlexItem">
+					<p id="friendName0" class="friendName">John Oliver</p>
+				</div>
+			</div>
+		</a>
+	</div>
+		
+</div>
+</div>
+<!-- friend screen -->
+<div id="wrapper" onclick="$('#wrapper').toggleClass('noDisplay');" class="noDisplay">
+<div id="popupContainer" class="flexContainer vertical justifySpaceBetween">
+
+		<div id="profileArea" class="flexContainer vertical">
+
+		<div id="namePic" class="fixedFlexItem flexContainer">
+			<img class="profPicture flexContainer" src="./images/Friend1.jpg"/>
+			<div id="name" class="flexContainer">Zachary Reardon</div>
+		</div>
+		<div id="socialTypes">
+			<img class="social" src="https://raw.githubusercontent.com/MithilaTople/Mediaroom_hackathon/master/client/images/twitter.png">
+			<img class="social" src="https://raw.githubusercontent.com/MithilaTople/Mediaroom_hackathon/master/client/images/facebook.png">
+			<img class="social" src="https://raw.githubusercontent.com/MithilaTople/Mediaroom_hackathon/master/client/images/Google-plus.png">
+		</div>
+		</div>
+		<div id="mid"></div>
+		<div class="underlineWhite" style="margin-bottom:5px;">PlayLists</div>
+		<div id="filmStrip" class="flexContainer overflow" onclick="$('#queueScreen').toggleClass('noDisplay');">
+			<a href="#!" class="fixedFlexItem">
+				<div id="filmStripItem0" class="filmStripItem active vertical fixedFlexItem flexContainer">
+					<img src="./images/p10475136_b_h6_ab.jpg" class="fixedFlexItem playListImage"></img>
+					<div id="friendContainer0" class="friendContainer fixedFlexItem">
+						<p id="friendName0" class="friendName">SmartQ</p>
+					</div>
+				</div>	
+			</a>
+			<a href="#!" class="fixedFlexItem">
+			<div id="filmStripItem0" class="filmStripItem vertical fixedFlexItem flexContainer">
+				<img src="./images/p10555214_b_h6_ab.jpg" class="fixedFlexItem playListImage"></img>
+				<div id="friendContainer0" class="friendContainer fixedFlexItem">
+					<p id="friendName0" class="friendName">Favorites</p>
+				</div>
+			</div>
+			</a>
+		</div>
+
+</div>
+</div>
+
+
+<div>
+<div id="topMenu" class="flexContainer justifySpaceBetween">
+	<div class="fixedFlexItem">
+			<fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+			</fb:login-button>
+			<div id="status">
+			</div>
+	</div>
 	<img src="./images/Untitled-5.png"></img>
 	<div style="font-size:30px"class="fixedFlexItem">Search</div>
 </div>
@@ -211,17 +350,162 @@ a {
 </div>
 
 <div id="filmStrip" class="flexContainer overflow">
-	<div id="filmStripItem0" class="filmStripItem active vertical fixedFlexItem flexContainer">
+	<a href="#!" class="fixedFlexItem">
+	<div id="filmStripItem0" class="filmStripItem active vertical fixedFlexItem flexContainer" onclick="$('#wrapper').toggleClass('noDisplay');">
 		<img src="./images/Friend1.jpg" class="fixedFlexItem"></img>
 		<div id="friendContainer0" class="friendContainer fixedFlexItem">
 			<p id="friendName0" class="friendName">You</p>
 			<p id="friendInfo0" class="friendInfo">@ZacharyReardon</p>
 		</div>
-	</div>	
+	</div>
+	</a>
+</div>
 </div>
 
-
+<script src="main.js"></script>
+<script src="container.js"></script>
 
 <script>
+var globalAuthToken = "nothing";
+console.log("works");
+  // This is called with the results from from FB.getLoginStatus().
+  function statusChangeCallback(response) {
+    console.log('statusChangeCallback');
+    console.log(response);
+    // The response object is returned with a status field that lets the
+    // app know the current login status of the person.
+    // Full docs on the response object can be found in the documentation
+    // for FB.getLoginStatus().
+    if (response.status === 'connected') {
+      // Logged into your app and Facebook.
+      testAPI();
+	  console.log("one "+response.authResponse.accessToken);
+    } else if (response.status === 'not_authorized') {
+      // The person is logged into Facebook, but not your app.
+      document.getElementById('status').innerHTML = 'Please log ' +
+        'into this app.';
+    } else {
+      // The person is not logged into Facebook, so we're not sure if
+      // they are logged into this app or not.
+      document.getElementById('status').innerHTML = 'Please log ' +
+        'into Facebook.';
+    }
+  }
+
+  // This function is called when someone finishes with the Login
+  // Button.  See the onlogin handler attached to it in the sample
+  // code below.
+  function checkLoginState() {
+    FB.getLoginStatus(function(response) {
+      statusChangeCallback(response);
+    });
+  }
+
+  window.fbAsyncInit = function() {
+  FB.init({
+    appId      : '430462230427024',
+    cookie     : true,  // enable cookies to allow the server to access 
+                        // the session
+    xfbml      : true,  // parse social plugins on this page
+    version    : 'v2.0' // use version 2.0
+  });
+
+  // Now that we've initialized the JavaScript SDK, we call 
+  // FB.getLoginStatus().  This function gets the state of the
+  // person visiting this page and can return one of three states to
+  // the callback you provide.  They can be:
+  //
+  // 1. Logged into your app ('connected')
+  // 2. Logged into Facebook, but not your app ('not_authorized')
+  // 3. Not logged into Facebook and can't tell if they are logged into
+  //    your app or not.
+  //
+  // These three cases are handled in the callback function.
+
+  FB.getLoginStatus(function(response) {
+    statusChangeCallback(response);
+  });
+
+  };
+
+  // Load the SDK asynchronously
+  (function(d, s, id) {
+	console.log("hi");
+    var js, fjs = d.getElementsByTagName(s)[0];
+	console.log(js);
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "http://connect.facebook.net/en_US/sdk.js";
+    fjs.parentNode.insertBefore(js, fjs);
+	console.log(js);
+	console.log(fjs);
+  }(document, 'script', 'facebook-jssdk'));
+
+  // Here we run a very simple test of the Graph API after login is
+  // successful.  See statusChangeCallback() for when this call is made.
+  function testAPI() {
+    console.log('Welcome!  Fetching your information.... ');
+    FB.api('/me', function(response) {
+      console.log('Successful login for: ' + response.name);
+      document.getElementById('status').innerHTML =
+        'Thanks for logging in, ' + response.name + '!';
+    });
+  }
+
+	
+	
+	
+
+</script>
+<script>
+function doFunction(){
+		FB.login(function(response) {
+		  if (response.status === 'connected') {
+			// Logged into your app and Facebook.
+			console.log("here");
+			globalAuthToken = response.authResponse.accessToken;
+			console.log(globalAuthToken);
+			console.log(response.expiresIn);
+		  } else if (response.status === 'not_authorized') {
+			// The person is logged into Facebook, but not your app.
+		  } else {
+			// The person is not logged into Facebook, so we're not sure if
+			// they are logged into this app or not.
+		  }
+		});
+	
+	var formData = {username: "don_shaun"};
+	console.log(JSON.stringify(formData))
+	jQuery.ajax( {
+		  url: "http://localhost:1337/register", 
+
+		  
+		  type: "POST",
+					//crossDomain: "true",
+					//jsonpCallback: 'jsonpCallback',
+		  //dataType: "json",
+		  contentType: "application/json",
+					async: false,
+					//jsonp: "jsonp",
+		  data: {username: "don", accessToken: globalAuthToken},
+		  success: function(d) {
+							   console.log('suceessss!!');
+							   //d = JSON.parse(d);
+							  // console.log(d);
+							   
+							   //graph.update();
+		  },
+
+		  error: function(xhr, status, errthrwn) {
+			 console.log("Ajax call failed !!" + status + " " + errthrwn);
+							   //console.log(xhr.getResponseHeader());
+							   wait = 0;
+		  }
+				  });
+	}
+
+</script>
+<script>
+
 </script>
 </body>
