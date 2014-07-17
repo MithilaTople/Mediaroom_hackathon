@@ -474,7 +474,7 @@ function doFunction(){
 		  }
 		});
 	
-	var formData = {username: "don_shaun"};
+	
 	console.log(JSON.stringify(formData))
 	jQuery.ajax( {
 		  url: "http://localhost:1337/register", 
@@ -490,9 +490,9 @@ function doFunction(){
 		  data: {username: "don", accessToken: globalAuthToken},
 		  success: function(d) {
 							   console.log('suceessss!!');
-							   //d = JSON.parse(d);
+							   d = JSON.parse(d);
 							  // console.log(d);
-							   
+							   var container = new Container(globalAuthToken, d.userName);
 							   //graph.update();
 		  },
 
@@ -502,6 +502,7 @@ function doFunction(){
 							   wait = 0;
 		  }
 				  });
+				  
 	}
 
 </script>
