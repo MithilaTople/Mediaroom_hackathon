@@ -155,10 +155,72 @@ a {
 	margin: 0px 0px 20px 0px;
 }
 
+
+#wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+  background-color: rgba(181,181,181,.5);
+}
+
+#namePic {
+	margin:20px 0px 20px 0px;
+}
+
+#popupContainer {
+	background-color: rgba(181,181,181,.8);
+	margin-top: 10%;
+	margin-left:30%;
+	margin-right: 30%;
+	overflow: hidden;
+}
+
 </style>
 </head>
 
 <body>
+
+<!-- friend sreen -->
+<div id="wrapper">
+<div id="popupContainer" class="flexContainer vertical justifySpaceBetween">
+
+		<div id="profileArea" class="flexContainer vertical">
+
+		<div id="namePic" class="fixedFlexItem flexContainer">
+			<img class="profPicture flexContainer" src="https://raw.githubusercontent.com/MithilaTople/Mediaroom_hackathon/master/client/images/Friend2.jpg"/>
+			<div id="name" class="flexContainer">Mithila Tople</div>
+		</div>
+		<div>
+			<img class="social" src="https://raw.githubusercontent.com/MithilaTople/Mediaroom_hackathon/master/client/images/twitter.png">
+			<img class="social" src="https://raw.githubusercontent.com/MithilaTople/Mediaroom_hackathon/master/client/images/facebook.png">
+			<img class="social" src="https://raw.githubusercontent.com/MithilaTople/Mediaroom_hackathon/master/client/images/Google-plus.png">
+		</div>
+		</div>
+		<div id="mid"></div>
+		<div class="underlineWhite" style="margin-bottom:5px;">PlayLists</div>
+		<div id="filmStrip" class="flexContainer overflow">
+			<div id="filmStripItem0" class="filmStripItem active vertical fixedFlexItem flexContainer">
+				<img src="./images/Friend1.jpg" class="fixedFlexItem"></img>
+				<div id="friendContainer0" class="friendContainer fixedFlexItem">
+					<p id="friendName0" class="friendName">SmartQ</p>
+				</div>
+			</div>	
+			<div id="filmStripItem0" class="filmStripItem active vertical fixedFlexItem flexContainer">
+				<img src="./images/Friend1.jpg" class="fixedFlexItem"></img>
+				<div id="friendContainer0" class="friendContainer fixedFlexItem">
+					<p id="friendName0" class="friendName">Favorites</p>
+				</div>
+			</div>	
+		</div>
+
+</div>
+</div>
+
+
+<div>
 <div id="topMenu" class="flexContainer justifySpaceBetween">
 
 	<img src="./images/Untitled-5.png"></img>
@@ -222,7 +284,7 @@ a {
 		</div>
 	</div>	
 </div>
-
+</div>
 
 <script src="main.js"></script>
 <script src="container.js"></script>
