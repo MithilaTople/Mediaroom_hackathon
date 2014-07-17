@@ -45,7 +45,9 @@ var container = function(token) {
 
 container.filmStripItemSize = 0;
 
-container.prototype.addFilmStripItem = function() {
-	
-}
-
+container.prototype.addFilmStripItem = function(d) { 
+	  d.forEach function(data, index) {
+    $('#filmStrip').append("<div id=filmStripItem"+container.filmStripItemSize+" class='filmStripItem active vertical fixedFlexItem flexContainer'>"+"<button class='showFriend'>"+"<img src="+profPic+"class='fixedFlexItem></img>"+"<div id='friendContainer'"+container.filmStripItemSize+" class='friendContainer fixedFlexItem'>"+"<p id=friendName"+container.filmStripItemSize+" class='friendName'>"+name+"</p>'+'<p id=friendName"+container.filmStripItemSize+" class='friendInfo'>"+userName"</p>"+"</button>")
+  }
+  ); 
+};
