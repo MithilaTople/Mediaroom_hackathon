@@ -146,7 +146,7 @@ a {
 	color: white;
 }
 
-#filmStrip {
+#filmStrip, #filmStripMenu {
 	width: 100%;
 	padding-bottom: 25px;
 }
@@ -419,16 +419,7 @@ a {
 	</a>
 </div>
 
-<div id="filmStrip" class="flexContainer overflow">
-	<a href="#!" class="fixedFlexItem">
-	<div id="filmStripItem0" class="filmStripItem active vertical fixedFlexItem flexContainer" onclick="$('#wrapper').toggleClass('noDisplay');">
-		<img src="./images/Friend1.jpg" class="fixedFlexItem"></img>
-		<div id="friendContainer0" class="friendContainer fixedFlexItem">
-			<p id="friendName0" class="friendName">You</p>
-			<p id="friendInfo0" class="friendInfo">@ZacharyReardon</p>
-		</div>
-	</div>
-	</a>
+<div id="filmStripMenu" class="flexContainer overflow">
 </div>
 </div>
 </div>
@@ -468,6 +459,7 @@ function doFunction(){
 		  data: {username: "don", accessToken: globalAuthToken},
 		  success: function(d) {
 							   console.log('suceessss!!');
+							   var container = new Container(d);
 							   //d = JSON.parse(d);
 							   
 							  //console.log(d);
