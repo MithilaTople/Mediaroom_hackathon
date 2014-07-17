@@ -421,11 +421,18 @@ a {
 
 <div id="filmStripMenu" class="flexContainer overflow">
 </div>
+<div id="time-to-update"></div>
 </div>
 </div>
 <script src="main.js"></script>
 <script src="container.js"></script>
 <script>
+
+
+
+//You can call this via the body tag if desired
+
+
 function doFunction(){
 		console.log("in doFunction");
 		FB.login(function(response) {
@@ -563,6 +570,13 @@ console.log("works");
       console.log('Successful login for: ' + response.name);
       document.getElementById('status').innerHTML =
         'Thanks for logging in, ' + response.name + '!';
+		if (response.name !== window.localStorage.getItem("name")) {
+		console.log("---------------------------------------");
+		console.log(window.localStorage.getItem("name"));
+		console.log(response.name );
+			window.localStorage.setItem('name', response.name);
+			window.location.reload();
+		}
     });
   }
 

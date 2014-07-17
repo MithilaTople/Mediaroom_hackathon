@@ -50,5 +50,9 @@ console.log(d);
 	}
 		
   }
-  ); 
+  
+  );
+  //jQuery('img').load('images/profile.png', function() { console.log("this was called")})
+  //window.location.reload();
+  //reloadPage(); 
 };
