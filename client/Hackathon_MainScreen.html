@@ -224,6 +224,13 @@ a {
 
 <body>
 
+<div id="iframe" class="noDisplay">
+<iframe  width="100%" height="100%" src="//www.youtube.com/embed/WA0wKeokWUU" frameborder="0" allowfullscreen>
+</iframe>
+<div onclick="$('#iframe').toggleClass('noDisplay');$('#mainScreen').toggleClass('noDisplay');" style="height:20px"></div>
+</div>
+
+<div id="mainScreen">
 <!-- queue screen -->
 <div id="queueScreen" onclick="$('#queueScreen').toggleClass('noDisplay');" class="noDisplay" >
 <div id="queueScreenInner" class="flexContainer vertical" onclick="event.stopPropagation()">
@@ -302,7 +309,6 @@ a {
 <!-- friend screen -->
 <div id="wrapper" onclick="$('#wrapper').toggleClass('noDisplay');" class="noDisplay">
 <div id="popupContainer" class="flexContainer vertical justifySpaceBetween" onclick="event.stopPropagation();">
-
 		<div id="profileArea" class="flexContainer vertical">
 			<div id="namePic" class="fixedFlexItem flexContainer">
 				<img class="profPicture fixedFlexItem" src="./images/Friend1.jpg"/>
@@ -316,10 +322,10 @@ a {
 		</div>
 		<div id="mid"></div>
 		<div class="underlineWhite" style="margin-bottom:5px;">PlayLists</div>
-		<div id="filmStrip" class="flexContainer overflow" onclick="$('#queueScreen').toggleClass('noDisplay'); $('#wrapper').toggleClass('noDisplay');">
-			<a href="#!" class="fixedFlexItem">
+		<div id="filmStrip" class="flexContainer overflow">
+			<a href="#!" class="fixedFlexItem" onclick="$('#wrapper').toggleClass('noDisplay');$('#mainScreen').toggleClass('noDisplay');$('#iframe').toggleClass('noDisplay');">
 				<div id="filmStripItem0" class="filmStripItem active vertical fixedFlexItem flexContainer">
-					<img src="./images/The-Next-Great-Baker.jpg" class="fixedFlexItem playListImage"></img>
+					<img src="./images/p10555214_b_h6_ab.jpg" class="fixedFlexItem playListImage"></img>
 					<div id="friendContainer0" class="friendContainer fixedFlexItem">
 						<p id="friendName0" class="friendName">SmartQ</p>
 						<div class="flexContainer justifySpaceBetween">
@@ -332,9 +338,9 @@ a {
 					</div>
 				</div>	
 			</a>
-			<a href="#!" class="fixedFlexItem">
+			<a href="#!" class="fixedFlexItem" onclick="$('#queueScreen').toggleClass('noDisplay'); $('#wrapper').toggleClass('noDisplay');">
 			<div id="filmStripItem0" class="filmStripItem vertical fixedFlexItem flexContainer">
-				<img src="./images/p10555214_b_h6_ab.jpg" class="fixedFlexItem playListImage"></img>
+				<img src="./images/The-Next-Great-Baker.jpg" class="fixedFlexItem playListImage"></img>
 				<div id="friendContainer0" class="friendContainer fixedFlexItem">
 					<p id="friendName0" class="friendName">Favorites</p>
 					<div class="flexContainer justifySpaceBetween">
@@ -361,7 +367,7 @@ a {
 			<div id="status">
 			</div>
 	</div>
-	<img src="./images/Untitled-5.png"></img>
+	<img style="height:25px;"src="./images/Untitled-5.png"></img>
 	<div style="font-size:30px"class="fixedFlexItem">Search</div>
 </div>
 <div class="spacingBlock flexContainer justifyEnd">
@@ -425,7 +431,7 @@ a {
 	</a>
 </div>
 </div>
-
+</div>
 <script src="main.js"></script>
 <script src="container.js"></script>
 
