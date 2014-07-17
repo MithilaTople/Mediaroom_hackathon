@@ -1,0 +1,77 @@
+/*General styling*/
+body{
+	font-family: "Helvetica Neue", Helvetica, Sans-serif;
+	color: white;
+	/*background-color:rgba(0,0,0,.8);*/
+    background-image: url("http://www.fanaru.com/space-dandy/image/13590-space-dandy-space-dandy.jpg");
+	font-size:18px;
+    height:auto;
+    width:1000px;
+}
+
+#wrapper{
+   background:#454545;
+   margin-left:300px;
+   width:700px;
+}
+
+#profileArea{
+    background:#454545;
+    height:auto;
+    width:auto;
+}
+
+#namePic{
+
+}
+.name{
+/*vertical-align:text-top;*/
+}
+.profPicture{
+    height:210px;
+    width:275px;
+    margin-left:5px;
+    margin-top:5px;
+}
+
+.social{
+    width:80px;
+    margin-left:10px;
+    height:80px;
+    background:red;
+}
+
+#mid{
+    background:#505050;
+    height:100px;
+    width:auto;
+}
+
+#playlists{
+    margin-top:5px;
+    width:700px;
+    height:300px;
+    overflow:scroll;
+    display:inline-flex;
+    flex-direction: row;
+    flex-wrap: nowrap
+    justify-content: flex-start
+}
+
+.content{
+    white-space:nowrap;
+    display:inline-block;
+    margin-top:10px;
+    margin-left:5px;
+    width:200px;
+    background:#454545;
+    border: 1px solid black;
+    padding-bottom:15px;
+    order:1;
+}
+
+.contentImg{
+    width:200px;
+    height:100px;
+    /*z-index:9;*/
+}
