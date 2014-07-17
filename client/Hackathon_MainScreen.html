@@ -9,6 +9,7 @@
 
 body {
 	color: white;
+	font-family: "Helvetica Neue", Helvetica, Sans-serif;
 	background-image: url(./images/background1-01.png)
 }
 
@@ -136,13 +137,19 @@ a {
 }
 
 .friendContainer {
-	background-color: #ABABAB;
+	background-color: #545454;
+	padding-left: 10px;
+	padding-top: 5px;
 	color: white;
 }
 
 #filmStrip {
 	width: 100%;
 	padding-bottom: 25px;
+}
+
+#socialTypes {
+	margin-bottom: 40px;
 }
 
 .friendName {
@@ -152,11 +159,11 @@ a {
 
 .friendInfo {
 	font-size:10px;
-	margin: 0px 0px 20px 0px;
+	margin: 0px 0px 20px 5px;
 }
 
 
-#wrapper {
+#wrapper, #queueScreen{
   position: absolute;
   top: 0;
   left: 0;
@@ -167,33 +174,91 @@ a {
 }
 
 #namePic {
-	margin:20px 0px 20px 0px;
+	margin: 20px 0px 10px 0px;
 }
 
-#popupContainer {
-	background-color: rgba(181,181,181,.8);
-	margin-top: 10%;
-	margin-left:30%;
+#popupContainer, #queueScreenInner {
+	background-color: rgba(45,45,45,1);
+	margin-top: 5%;
+	margin-left: 30%;
 	margin-right: 30%;
 	overflow: hidden;
+	padding-left: 5px;
 }
 
+#name {
+	padding-left: 5px;
+}
+
+.playListImage {
+	height: 140px;
+	width: 160px;
+}
+a {
+
+}
 </style>
 </head>
 
 <body>
 
-<!-- friend sreen -->
-<div id="wrapper">
+<!-- queue screen -->
+<div id="queueScreen" onclick="$('#queueScreen').toggleClass('noDisplay');" class="noDisplay" >
+<div id="queueScreenInner" class="flexContainer vertical">
+	<div class="flexContainer fixedFlexItem alignEnd" style="margin-bottom:5px;">
+		<div style="font-size:20px; margin-right: 10px;">SmartQ</div>
+		<div style="font-size:10px;"> Enjoy your exclussive channel based on your history!</div>
+	</div>
+	<div class="flexContainer fixedFlexItem">
+		<div class="flexContainer fixedFlexItem vertical">
+			<img src="./images/p10475136_b_h6_ab copy.jpg" class="fixedFlexItem playListImage"></img>
+		</div>
+		<div class="flexContainer fixedFlexItem vertical" style="margin-left:10px">
+			<div style="font-size:20px">Next Great Baker</div>
+			<p style="width: 300px; margin-top:5px;"> The show features contestants particpating in challenges that test their baking and decorating skills. Eachweek, a contestant will be eliminated; the last contestant standing will win a grand prize package.</p>
+		</div>
+	</div>
+	<div style="margin-top:40px; margin-bottom: 5px;">Next in SmartQ</div>
+	<div id="filmStrip" class="flexContainer overflow">
+		<a href="#!">
+			<div id="filmStripItem0" class="filmStripItem active vertical fixedFlexItem flexContainer">
+				<img src="./images/p10475136_b_h6_ab copy.jpg" class="fixedFlexItem playListImage"></img>
+				<div id="friendContainer0" class="friendContainer fixedFlexItem">
+					<p id="friendName0" class="friendName">SmartQ</p>
+				</div>
+			</div>	
+		</a>
+		<a href="#!">
+			<div id="filmStripItem0" class="filmStripItem vertical fixedFlexItem flexContainer">
+				<img src="./images/p10555214_b_h6_ab copy.jpg" class="fixedFlexItem playListImage"></img>
+				<div id="friendContainer0" class="friendContainer fixedFlexItem">
+					<p id="friendName0" class="friendName">Favorites</p>
+				</div>
+			</div>
+		</a>
+		<a href="#!">
+			<div id="filmStripItem0" class="filmStripItem vertical fixedFlexItem flexContainer">
+				<img src="./images/p10555214_b_h6_ab copy.jpg" class="fixedFlexItem playListImage"></img>
+				<div id="friendContainer0" class="friendContainer fixedFlexItem">
+					<p id="friendName0" class="friendName">Comedies</p>
+				</div>
+			</div>
+		</a>
+	</div>
+		
+</div>
+</div>
+<!-- friend screen -->
+<div id="wrapper" onclick="$('#wrapper').toggleClass('noDisplay');" class="noDisplay">
 <div id="popupContainer" class="flexContainer vertical justifySpaceBetween">
 
 		<div id="profileArea" class="flexContainer vertical">
 
 		<div id="namePic" class="fixedFlexItem flexContainer">
-			<img class="profPicture flexContainer" src="https://raw.githubusercontent.com/MithilaTople/Mediaroom_hackathon/master/client/images/Friend2.jpg"/>
-			<div id="name" class="flexContainer">Mithila Tople</div>
+			<img class="profPicture flexContainer" src="./images/Friend1.jpg"/>
+			<div id="name" class="flexContainer">Zachary Reardon</div>
 		</div>
-		<div>
+		<div id="socialTypes">
 			<img class="social" src="https://raw.githubusercontent.com/MithilaTople/Mediaroom_hackathon/master/client/images/twitter.png">
 			<img class="social" src="https://raw.githubusercontent.com/MithilaTople/Mediaroom_hackathon/master/client/images/facebook.png">
 			<img class="social" src="https://raw.githubusercontent.com/MithilaTople/Mediaroom_hackathon/master/client/images/Google-plus.png">
@@ -201,19 +266,23 @@ a {
 		</div>
 		<div id="mid"></div>
 		<div class="underlineWhite" style="margin-bottom:5px;">PlayLists</div>
-		<div id="filmStrip" class="flexContainer overflow">
-			<div id="filmStripItem0" class="filmStripItem active vertical fixedFlexItem flexContainer">
-				<img src="./images/Friend1.jpg" class="fixedFlexItem"></img>
-				<div id="friendContainer0" class="friendContainer fixedFlexItem">
-					<p id="friendName0" class="friendName">SmartQ</p>
-				</div>
-			</div>	
-			<div id="filmStripItem0" class="filmStripItem active vertical fixedFlexItem flexContainer">
-				<img src="./images/Friend1.jpg" class="fixedFlexItem"></img>
+		<div id="filmStrip" class="flexContainer overflow" onclick="$('#queueScreen').toggleClass('noDisplay');">
+			<a href="#!">
+				<div id="filmStripItem0" class="filmStripItem active vertical fixedFlexItem flexContainer">
+					<img src="./images/p10475136_b_h6_ab copy.jpg" class="fixedFlexItem playListImage"></img>
+					<div id="friendContainer0" class="friendContainer fixedFlexItem">
+						<p id="friendName0" class="friendName">SmartQ</p>
+					</div>
+				</div>	
+			</a>
+			<a href="#!">
+			<div id="filmStripItem0" class="filmStripItem vertical fixedFlexItem flexContainer">
+				<img src="./images/p10555214_b_h6_ab copy.jpg" class="fixedFlexItem playListImage"></img>
 				<div id="friendContainer0" class="friendContainer fixedFlexItem">
 					<p id="friendName0" class="friendName">Favorites</p>
 				</div>
-			</div>	
+			</div>
+			</a>
 		</div>
 
 </div>
@@ -276,13 +345,15 @@ a {
 </div>
 
 <div id="filmStrip" class="flexContainer overflow">
-	<div id="filmStripItem0" class="filmStripItem active vertical fixedFlexItem flexContainer">
+	<a href="#!">
+	<div id="filmStripItem0" class="filmStripItem active vertical fixedFlexItem flexContainer" onclick="$('#wrapper').toggleClass('noDisplay');">
 		<img src="./images/Friend1.jpg" class="fixedFlexItem"></img>
 		<div id="friendContainer0" class="friendContainer fixedFlexItem">
 			<p id="friendName0" class="friendName">You</p>
 			<p id="friendInfo0" class="friendInfo">@ZacharyReardon</p>
 		</div>
-	</div>	
+	</div>
+	</a>
 </div>
 </div>
 
