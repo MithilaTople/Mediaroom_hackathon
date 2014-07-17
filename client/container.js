@@ -9,8 +9,10 @@ var data = [ {"profilePic": "/images/profile.png", "name": "You", "userName": "@
 			]
 
 var Container = function(token) {
+var self = this;
 
-	this.addFilmStripItem(data);
+	self.addFilmStripItem(data);
+
 }
 
 Container.filmStripItemSize = 0;
@@ -18,18 +20,35 @@ Container.filmStripItemSize = 0;
 Container.prototype.addFilmStripItem = function(d) { 
 console.log(d);
 	d.forEach( function(data, index) {
+	if (Container.filmStripItemSize > 0) {
 	console.log(data);
 		$('#filmStripMenu').append(	
 		$('<a href="#!" class="fixedFlexItem">\
-			<div id="filmStripItem'+ Container.filmStripItemSize + '" class="filmStripItem active vertical fixedFlexItem flexContainer" onclick="$("#wrapper").toggleClass("noDisplay");">\
+			<div id="filmStripItem'+ Container.filmStripItemSize + '" class="filmStripItem active vertical fixedFlexItem flexContainer">\
 			<img src="' + data.profilePic +'" class="fixedFlexItem playListImage"></img>\
 			<div id="friendContainer'+ Container.filmStripItemSize + '" class="friendContainer fixedFlexItem">\
 				<p id="friendName'+ Container.filmStripItemSize + '" class="friendName">'+ data.name +'</p>\
 				<p id="friendInfo'+ Container.filmStripItemSize + '" class="friendInfo">'+ data.userName +'</p>\
 			</div>\
 	</div>\
-	</a>'));
+	</a>').on('click', function() {$('#wrapper').toggleClass('noDisplay');}));
 	Container.filmStripItemSize++;
+	}
+	else {
+		console.log("TEST");
+		$('#filmStripMenu').prepend(	
+		$('<a href="#!" class="fixedFlexItem">\
+			<div id="filmStripItem'+ Container.filmStripItemSize + '" class="filmStripItem active vertical fixedFlexItem flexContainer">\
+			<img src="' + data.profilePic +'" class="fixedFlexItem playListImage"></img>\
+			<div id="friendContainer'+ Container.filmStripItemSize + '" class="friendContainer fixedFlexItem">\
+				<p id="friendName'+ Container.filmStripItemSize + '" class="friendName">'+ data.name +'</p>\
+				<p id="friendInfo'+ Container.filmStripItemSize + '" class="friendInfo">'+ data.userName +'</p>\
+			</div>\
+	</div>\
+	</a>').on('click', function() {$('#wrapper').toggleClass('noDisplay');}));
+	Container.filmStripItemSize++;
+	}
+		
   }
   ); 
 };
