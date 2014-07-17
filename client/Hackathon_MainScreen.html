@@ -1,2 +1,129 @@
-Test
-fooll
+<!doctype>
+
+
+<head>
+<style>
+
+</style>
+
+.noDisplay {
+	display: none;
+}
+
+#tabContainer {
+	//position: relative;
+	border-bottom: solid 1px black;
+	overflow:hidden;
+	clear: both;
+	//z-index: 0;
+}
+
+#allTab {
+	margin-left: 8px;
+}
+
+.tab {
+	width: 100px;
+	background: #33D3FF;
+	padding-left: 10px;
+	//float: left;
+	border: solid 1px black;
+	//z-index: 0;
+	color: black;
+	text-decoration: none;
+}
+a {
+	text-decoration: none;
+}
+
+.selectedTab {
+	background: #00ACDB;
+}
+
+.fixedFlexItem {
+   flex: none;
+   -webkit-flex: none;
+   -ms-flex: none;
+}
+
+.flexContainer {
+   display: flex;
+   display: -webkit-flex;
+   display: -ms-flexbox;
+}
+
+.vertical {
+   flex-direction: column;
+   -webkit-flex-direction: column;
+   -ms-flex-direction: column;
+}
+
+.overflow {
+   overflow: auto;
+}
+
+.justifyEnd {
+   justify-content: flex-end;
+   -webkit-justify-content: flex-end;
+   -ms-flex-pack: flex-end;
+}
+
+.justifySpaceAround {
+   justify-content: space-around;
+   -webkit-justify-content: space-around;
+   -ms-flex-pack: space-around;
+}
+
+.justifySpaceBetween {
+   justify-content: space-between;
+   -webkit-justify-content: space-between;
+   -ms-flex-pack: space-between;
+}
+
+.alignEnd {
+	align-items: flex-end;
+	-webkit-align-items: flex-end;
+	-ms-align-items: flex-end;
+} 
+
+</head>
+
+<body>
+<div id="topMenu" class="flexContainer vertical justifySpaceBetween">
+	<img src="./images/falicon.ico">YourTv</img>
+	<div class="fixedFlexItem">Mediaroom</div>
+	<div class="fixedFlexItem">Search</div>
+</div>
+		
+
+</div>
+<div id="tabContainer" class="flexContainer justifySpaceBetween">
+	<div class="flexContainer">
+		<a href='#!'>
+			<div id="allTab" class="tab selectedTab fixedFlexItem">All
+			</div>
+		</a>
+		<a href='#!'>
+			<div id="okTab" class="tab fixedFlexItem">Ok
+			</div>
+		</a>
+		<a href='#!'>
+			<div id="criticalTab" class="tab fixedFlexItem">Critical
+			</div>
+		</a>
+		<a href='#!'>
+			<div id="noDataTab" class="tab fixedFlexItem">No Data
+			</div>
+		</a>
+		</div>
+	<a href="#!">
+		<div id="hiddenMenuController" class="ui-icon ui-icon-carat-1-n"></div>
+	</a>
+</div>
+
+
+
+
+<script>
+</script>
+</body>
