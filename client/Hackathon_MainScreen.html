@@ -362,8 +362,8 @@ a {
 <div>
 <div id="topMenu" class="flexContainer justifySpaceBetween">
 	<div class="fixedFlexItem">
-			<fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
-			</fb:login-button>
+			<fb:login-button scope="public_profile,email,user_friends" onlogin="checkLoginState();">
+			</fb:login-button>			
 			<div id="status">
 			</div>
 	</div>
@@ -434,6 +434,57 @@ a {
 </div>
 <script src="main.js"></script>
 <script src="container.js"></script>
+<script>
+function doFunction(){
+		console.log("in doFunction");
+		FB.login(function(response) {
+		  if (response.status === 'connected') {
+			// Logged into your app and Facebook.
+			console.log("here");
+			globalAuthToken = response.authResponse.accessToken;
+			console.log(globalAuthToken);
+			console.log(response.expiresIn);
+		  } else if (response.status === 'not_authorized') {
+			// The person is logged into Facebook, but not your app.
+		  } else {
+			// The person is not logged into Facebook, so we're not sure if
+			// they are logged into this app or not.
+		  }
+		});
+	
+	
+	//console.log(JSON.stringify(formData))
+	jQuery.ajax( {
+		  url: "http://localhost:1337/register", 
+
+		  
+		  type: "POST",
+					//crossDomain: "true",
+					//jsonpCallback: 'jsonpCallback',
+		  //dataType: "json",
+		  contentType: "application/json",
+					async: false,
+					//jsonp: "jsonp",
+		  data: {username: "don", accessToken: globalAuthToken},
+		  success: function(d) {
+							   console.log('suceessss!!');
+							   //d = JSON.parse(d);
+							   
+							  //console.log(d);
+							  // var container = new Container(globalAuthToken, d.userName);
+							   //graph.update();
+		  },
+
+		  error: function(xhr, status, errthrwn) {
+			 console.log("Ajax call failed !!" + status + " " + errthrwn);
+							   //console.log(xhr.getResponseHeader());
+							   wait = 0;
+		  }
+				  });
+				  
+	}
+
+</script>
 
 <script>
 var globalAuthToken = "nothing";
@@ -450,6 +501,7 @@ console.log("works");
       // Logged into your app and Facebook.
       testAPI();
 	  console.log("one "+response.authResponse.accessToken);
+	  doFunction();
     } else if (response.status === 'not_authorized') {
       // The person is logged into Facebook, but not your app.
       document.getElementById('status').innerHTML = 'Please log ' +
@@ -527,55 +579,5 @@ console.log("works");
 	
 
 </script>
-<script>
-function doFunction(){
-		FB.login(function(response) {
-		  if (response.status === 'connected') {
-			// Logged into your app and Facebook.
-			console.log("here");
-			globalAuthToken = response.authResponse.accessToken;
-			console.log(globalAuthToken);
-			console.log(response.expiresIn);
-		  } else if (response.status === 'not_authorized') {
-			// The person is logged into Facebook, but not your app.
-		  } else {
-			// The person is not logged into Facebook, so we're not sure if
-			// they are logged into this app or not.
-		  }
-		});
-	
-	var formData = {username: "don_shaun"};
-	console.log(JSON.stringify(formData))
-	jQuery.ajax( {
-		  url: "http://localhost:1337/register", 
 
-		  
-		  type: "POST",
-					//crossDomain: "true",
-					//jsonpCallback: 'jsonpCallback',
-		  //dataType: "json",
-		  contentType: "application/json",
-					async: false,
-					//jsonp: "jsonp",
-		  data: {username: "don", accessToken: globalAuthToken},
-		  success: function(d) {
-							   console.log('suceessss!!');
-							   //d = JSON.parse(d);
-							  // console.log(d);
-							   
-							   //graph.update();
-		  },
-
-		  error: function(xhr, status, errthrwn) {
-			 console.log("Ajax call failed !!" + status + " " + errthrwn);
-							   //console.log(xhr.getResponseHeader());
-							   wait = 0;
-		  }
-				  });
-	}
-
-</script>
-<script>
-
-</script>
 </body>

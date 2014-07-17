@@ -4,7 +4,7 @@ var container = function(token) {
 
 	var self = this;
 	jQuery.ajax( {
-		  url: 'http://127.0.0.1:1337/update/friends', //?service=' + serviceName + '&date_range=YYYY-MM-DD HH:MM:SS.0 YYYY-MM-DD HH:MM:SS.0',
+		  url: 'http://127.0.0.1:1337/update/friends?token=' + token, //?service=' + serviceName + '&date_range=YYYY-MM-DD HH:MM:SS.0 YYYY-MM-DD HH:MM:SS.0',
 
 		  contentType: 'application/json',
 		  type: "GET",	  //crossDomain: "true",

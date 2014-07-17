@@ -4,6 +4,7 @@ var fs = require('fs'),
               http = require('http');
 
 var file = {};
+var request = require('request');
 var https = require('https');
 var responseBody = {series: []}
 
@@ -87,7 +88,7 @@ http.createServer(function (req, res) {
 
 	var options = {
 			   host : 'graph.facebook.com',
-			   path: '/me/picture?access_token='+result[2],
+			   path: '/me?access_token='+result[2],
 			   method: 'GET'
  };
  
@@ -100,22 +101,39 @@ http.createServer(function (req, res) {
 			   });
 
 			   response.on('end', function(){
-							 console.log(str);
+							 console.log("str "+str);
+							 fs.writeFile('profile.png', str, function (err) {
+							  if (err) throw err;
+							  console.log('It\'s saved!');
+							});
+			   
 			   });
  }
  
- https.request(options,callback).end();
+	https.request(options,callback).end();
+	var download = function(uri, filename, callback){
+		request.head(uri, function(err, res, body){
+		console.log('content-type:', res.headers['content-type']);
+		console.log('content-length:', res.headers['content-length']);
+
+		request(uri).pipe(fs.createWriteStream(filename)).on('close', callback);
+		});
+	};
+
+	download('https://graph.facebook.com/me/picture?type=large&access_token='+result[2], './images/profile.png', function(){
+	console.log('done');
+	});
  
 	
   });
 	
-		var result = str.toString().split("=");
-		console.log("result " +result);
+		
 		res.writeHeader(200, {"Content-Type": "text/html", "Cache-control": "private, max-age=60000"});
         res.end(fs.readFileSync('Hackathon_MainScreen.html')); // changed it here
         return;
   }
-
+	
+	
   //send update
   
   console.log("Waiting.......");
