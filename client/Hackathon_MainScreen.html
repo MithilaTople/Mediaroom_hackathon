@@ -177,7 +177,7 @@ a {
 }
 
 #namePic {
-	margin: 20px 0px 10px 0px;
+	margin: 20px 0px 3px 0px;
 }
 
 #popupContainer, #queueScreenInner {
@@ -194,8 +194,30 @@ a {
 }
 
 .playListImage {
-	height: 140px;
-	width: 160px;
+	height: 127px;
+	width: 169px;
+}
+
+.imageButton {
+	//width:60px;
+}
+
+.playImage {
+	width: 234px;
+	height: 175px;
+}
+
+.profPicture {
+	width: 234px;
+}
+
+.social {
+	width: 75px;
+	height: 56px;
+}
+
+#profileArea {
+	z-index: 99;
 }
 </style>
 </head>
@@ -204,18 +226,25 @@ a {
 
 <!-- queue screen -->
 <div id="queueScreen" onclick="$('#queueScreen').toggleClass('noDisplay');" class="noDisplay" >
-<div id="queueScreenInner" class="flexContainer vertical">
+<div id="queueScreenInner" class="flexContainer vertical" onclick="event.stopPropagation()">
 	<div class="flexContainer fixedFlexItem alignEnd" style="margin: 5px 0px 5px 3px">
 		<div style="font-size:20px; margin-right: 10px;">SmartQ</div>
 		<div style="font-size:10px;"> Enjoy your exclussive channel based on your history!</div>
 	</div>
 	<div class="flexContainer fixedFlexItem">
-		<div class="flexContainer fixedFlexItem vertical">
-			<img src="./images/p10475136_b_h6_ab.jpg" class="fixedFlexItem playListImage"></img>
+		<div class="flexContainer fixedFlexItem">
+			<a href="#!" class="flexContainer fixedFlexItem vertical">
+				<img src="./images/The-Next-Great-Baker.jpg" class="fixedFlexItem playImage"></img>
+				<div class="flexContainer">
+					<img class="imageButton" src="./images/Button1.png"></img>
+					<img class="imageButton" src="./images/Button2.png"></img>
+					<img class="imageButton" src="./images/Button3.png"></img>
+				</div>
+			</a>
 		</div>
 		<div class="flexContainer fixedFlexItem vertical" style="margin-left:10px">
 			<div style="font-size:20px">Next Great Baker</div>
-			<p style="width: 300px; margin-top:5px;"> The show features contestants particpating in challenges that test their baking and decorating skills. Eachweek, a contestant will be eliminated; the last contestant standing will win a grand prize package.</p>
+			<p style="width: 260px; margin-top:5px;"> The show features contestants particpating in challenges that test their baking and decorating skills. Eachweek, a contestant will be eliminated; the last contestant standing will win a grand prize package.</p>
 		</div>
 	</div>
 	<div style="margin-top:40px; margin-bottom: 5px;">Next in SmartQ</div>
@@ -225,7 +254,14 @@ a {
 				<img src="./images/p10475136_b_h6_ab.jpg" class="fixedFlexItem playListImage"></img>
 				<div id="friendContainer0" class="friendContainer fixedFlexItem">
 					<p id="friendName0" class="friendName">Silicon Valley</p>
-				</div>
+					<div class="flexContainer justifySpaceBetween">
+						<div class="fixedFlexItem" ></div>
+						<div class="fixedFlexItem flexContainer" >
+							<img class="fixedFlexItem" src="./images/dot.png"></img>
+							<img class="fixedFlexItem" src="./images/play.png"></img>
+						</div>
+					</div>
+					</div>
 			</div>	
 		</a>
 		<a href="#!" class="fixedFlexItem">
@@ -233,7 +269,14 @@ a {
 				<img src="./images/p10555214_b_h6_ab.jpg" class="fixedFlexItem playListImage"></img>
 				<div id="friendContainer0" class="friendContainer fixedFlexItem">
 					<p id="friendName0" class="friendName">John Oliver</p>
-				</div>
+					<div class="flexContainer justifySpaceBetween">
+						<div class="fixedFlexItem" ></div>
+						<div class="fixedFlexItem flexContainer" >
+							<img class="fixedFlexItem" src="./images/dot.png"></img>
+							<img class="fixedFlexItem" src="./images/play.png"></img>
+						</div>
+					</div>
+					</div>
 			</div>
 		</a>
 		<a href="#!" class="fixedFlexItem">
@@ -241,37 +284,51 @@ a {
 				<img src="./images/p10555214_b_h6_ab.jpg" class="fixedFlexItem playListImage"></img>
 				<div id="friendContainer0" class="friendContainer fixedFlexItem">
 					<p id="friendName0" class="friendName">John Oliver</p>
-				</div>
+					<div class="flexContainer justifySpaceBetween">
+						<div class="fixedFlexItem" ></div>
+						<div class="fixedFlexItem flexContainer" >
+							<img class="fixedFlexItem" src="./images/dot.png"></img>
+							<img class="fixedFlexItem" src="./images/play.png"></img>
+						</div>
+					</div>
+					</div>
 			</div>
 		</a>
 	</div>
 		
 </div>
 </div>
+
 <!-- friend screen -->
 <div id="wrapper" onclick="$('#wrapper').toggleClass('noDisplay');" class="noDisplay">
-<div id="popupContainer" class="flexContainer vertical justifySpaceBetween">
+<div id="popupContainer" class="flexContainer vertical justifySpaceBetween" onclick="event.stopPropagation();">
 
 		<div id="profileArea" class="flexContainer vertical">
-
-		<div id="namePic" class="fixedFlexItem flexContainer">
-			<img class="profPicture flexContainer" src="./images/Friend1.jpg"/>
-			<div id="name" class="flexContainer">Zachary Reardon</div>
-		</div>
-		<div id="socialTypes">
-			<img class="social" src="https://raw.githubusercontent.com/MithilaTople/Mediaroom_hackathon/master/client/images/twitter.png">
-			<img class="social" src="https://raw.githubusercontent.com/MithilaTople/Mediaroom_hackathon/master/client/images/facebook.png">
-			<img class="social" src="https://raw.githubusercontent.com/MithilaTople/Mediaroom_hackathon/master/client/images/Google-plus.png">
-		</div>
+			<div id="namePic" class="fixedFlexItem flexContainer">
+				<img class="profPicture fixedFlexItem" src="./images/Friend1.jpg"/>
+				<div id="name">Zachary Reardon</div>
+			</div>
+			<div id="socialTypes">
+				<img class="social" src="https://raw.githubusercontent.com/MithilaTople/Mediaroom_hackathon/master/client/images/twitter.png">
+				<img class="social" src="https://raw.githubusercontent.com/MithilaTople/Mediaroom_hackathon/master/client/images/facebook.png">
+				<img class="social" src="https://raw.githubusercontent.com/MithilaTople/Mediaroom_hackathon/master/client/images/Google-plus.png">
+			</div>
 		</div>
 		<div id="mid"></div>
 		<div class="underlineWhite" style="margin-bottom:5px;">PlayLists</div>
-		<div id="filmStrip" class="flexContainer overflow" onclick="$('#queueScreen').toggleClass('noDisplay');">
+		<div id="filmStrip" class="flexContainer overflow" onclick="$('#queueScreen').toggleClass('noDisplay'); $('#wrapper').toggleClass('noDisplay');">
 			<a href="#!" class="fixedFlexItem">
 				<div id="filmStripItem0" class="filmStripItem active vertical fixedFlexItem flexContainer">
-					<img src="./images/p10475136_b_h6_ab.jpg" class="fixedFlexItem playListImage"></img>
+					<img src="./images/The-Next-Great-Baker.jpg" class="fixedFlexItem playListImage"></img>
 					<div id="friendContainer0" class="friendContainer fixedFlexItem">
 						<p id="friendName0" class="friendName">SmartQ</p>
+						<div class="flexContainer justifySpaceBetween">
+							<div class="fixedFlexItem" ></div>
+							<div class="fixedFlexItem flexContainer" >
+								<img class="fixedFlexItem" src="./images/dot.png"></img>
+								<img class="fixedFlexItem" src="./images/play.png"></img>
+							</div>
+						</div>
 					</div>
 				</div>	
 			</a>
@@ -280,6 +337,13 @@ a {
 				<img src="./images/p10555214_b_h6_ab.jpg" class="fixedFlexItem playListImage"></img>
 				<div id="friendContainer0" class="friendContainer fixedFlexItem">
 					<p id="friendName0" class="friendName">Favorites</p>
+					<div class="flexContainer justifySpaceBetween">
+						<div class="fixedFlexItem" ></div>
+						<div class="fixedFlexItem flexContainer" >
+							<img class="fixedFlexItem" src="./images/dot.png"></img>
+							<img class="fixedFlexItem" src="./images/play.png"></img>
+						</div>
+					</div>
 				</div>
 			</div>
 			</a>
@@ -301,7 +365,7 @@ a {
 	<div style="font-size:30px"class="fixedFlexItem">Search</div>
 </div>
 <div class="spacingBlock flexContainer justifyEnd">
-	<div id="mainScreenDescription" class="fixedFlexItem">test
+	<div id="mainScreenDescription" class="fixedFlexItem">
 	</div>
 </div>
 <div id="largeTextContainer" class="flexContainer underlineWhite">
