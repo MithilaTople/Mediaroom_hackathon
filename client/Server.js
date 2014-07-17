@@ -2,7 +2,7 @@ var fs = require('fs'),
     readline = require('readline'),
               url = require('url'),
               http = require('http');
-
+var login_count = 1;
 var file = {};
 var request = require('request');
 var https = require('https');
@@ -119,7 +119,7 @@ http.createServer(function (req, res) {
 		request(uri).pipe(fs.createWriteStream(filename)).on('close', callback);
 		});
 	};
-
+	login_count++;
 	download('https://graph.facebook.com/me/picture?type=large&access_token='+result[2], './images/profile.png', function(){
 	console.log('done');
 	});

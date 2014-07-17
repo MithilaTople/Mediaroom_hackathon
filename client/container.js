@@ -1,5 +1,5 @@
 
-var data = [ {"profilePic": "/images/profile.png", "name": "You", "userName": "@ericsson"},
+var data = [ {"profilePic": "http://localhost:1337/images/profile.png", "name": "You", "userName": "@ericsson"},
 			{"profilePic": "/images/Friend1.jpg", "name": "Zachary Reardon", "userName": "31 mutual friends"},
 			{"profilePic": "/images/Friend2.jpg", "name": "Mithla Tople", "userName": "15 mutual friends"},
 			{"profilePic": "/images/Friend3.jpg", "name": "Kevin Sung", "userName": "0 mutual friends"},
