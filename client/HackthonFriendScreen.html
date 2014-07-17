@@ -3,17 +3,319 @@
 
 	<head>
 
-		<link rel="stylesheet" type="text/css" href="hackthonCSS.css">
+		<link rel="stylesheet" type="text/css" href="hackthon.css">
 		<!-- device width -->
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.0/jquery-ui.min.js"></script>
-		<script  type="text/javascript" src="script.js"></script>
-		
+
 	</head>
 
-	<body>
-	<!--- Account ID confirmation-->
-		<div id="wrapper">
+
+<head>
+<style>
+body{
+	font-family: "Helvetica Neue", Helvetica, Sans-serif;
+	color: white;
+	/*background-color:rgba(0,0,0,.8);*/
+    background-image: url("http://www.fanaru.com/space-dandy/image/13590-space-dandy-space-dandy.jpg");
+	font-size:18px;
+    height:auto;
+    width:1000px;
+}
+
+
+
+.noDisplay {
+    display: none;
+}
+
+#tabContainer {
+    overflow: hidden;
+    clear: both;
+    margin: 10px 0px 10px 0px;
+}
+
+#allTab {
+    margin-left: 8px;
+}
+
+.tab {
+    width: 100px;
+    //background: #33D3FF;
+    padding-left: 10px;
+    //border: solid 1px black;
+    font-size: 20px;
+    color: rgba(255,255,255,.6);
+    text-decoration: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.selectedTab {
+    color: rgba(255,255,255,1);
+}
+
+
+
+.fixedFlexItem {
+   flex: none;
+   -webkit-flex: none;
+   -ms-flex: none;
+}
+
+.flexContainer {
+   display: flex;
+   display: -webkit-flex;
+   display: -ms-flexbox;
+}
+
+.vertical {
+   flex-direction: column;
+   -webkit-flex-direction: column;
+   -ms-flex-direction: column;
+}
+
+.overflow {
+   overflow: auto;
+}
+
+.justifyEnd {
+   justify-content: flex-end;
+   -webkit-justify-content: flex-end;
+   -ms-flex-pack: flex-end;
+}
+
+.justifySpaceAround {
+   justify-content: space-around;
+   -webkit-justify-content: space-around;
+   -ms-flex-pack: space-around;
+}
+
+.justifySpaceBetween {
+   justify-content: space-between;
+   -webkit-justify-content: space-between;
+   -ms-flex-pack: space-between;
+}
+
+.justifySpaceBetween {
+   justify-content: space-between;
+   -webkit-justify-content: space-between;
+   -ms-flex-pack: space-between;
+}
+
+.justifyEnd {
+   justify-content: flex-end;
+   -webkit-justify-content: flex-end;
+   -ms-flex-pack: flex-end;
+}
+
+.alignEnd {
+    align-items: flex-end;
+    -webkit-align-items: flex-end;
+    -ms-align-items: flex-end;
+} 
+.spacingBlock {
+    height:40%;
+    width:100%;
+}
+
+#largeTextContainer{
+    width:100%;
+}
+
+.largeText {
+    font-size:40px;
+    color: rgba(255,255,255,.6);
+}
+
+.largeTextItem {
+    margin-right: 100px;
+}
+
+
+.underlineWhite {
+    border-bottom: solid 1px white;
+}
+
+.active {
+    color: rgba(255,255,255,1);
+    border-bottom: solid 3px #80DBFF;
+}
+
+.filmStripItem {
+    margin-left: 30px;
+}
+
+.friendContainer {
+    background-color: #ABABAB;
+    color: white;
+}
+
+#filmStrip {
+    width: 100%;
+    padding-bottom: 25px;
+}
+
+.friendName {
+    font-size:14px;
+    margin:0px;
+}
+
+.friendInfo {
+    font-size:10px;
+    margin: 0px 0px 20px 0px;
+}
+.showFriend{
+     background:none;
+         cursor: pointer;
+     border:none;
+}
+
+/*FriendScreen*/
+
+#friendScreen{
+    display:none;
+}
+#wrapper{
+   background:#454545;
+   margin-left:300px;
+   width:700px;
+}
+
+#profileArea{
+    background:#454545;
+    height:auto;
+    width:auto;
+}
+
+#namePic{
+
+}
+.name{
+/*vertical-align:text-top;*/
+}
+.profPicture{
+    height:210px;
+    width:275px;
+    margin-left:5px;
+    margin-top:5px;
+}
+
+.social{
+    width:80px;
+    margin-left:10px;
+    height:80px;
+    background:red;
+}
+
+#mid{
+    background:#505050;
+    height:100px;
+    width:auto;
+}
+
+#playlists{
+    margin-top:5px;
+    width:700px;
+    height:300px;
+    overflow:scroll;
+    display:inline-flex;
+    flex-direction: row;
+    flex-wrap: nowrap
+    justify-content: flex-start
+}
+
+.content{
+    white-space:nowrap;
+    display:inline-block;
+    margin-top:10px;
+    margin-left:5px;
+    width:200px;
+    background:#454545;
+    border: 1px solid black;
+    padding-bottom:15px;
+    order:1;
+}
+
+.contentImg{
+    width:200px;
+    height:100px;
+    /*z-index:9;*/
+}
+
+</style>
+</head>
+
+<body>
+<div id="topMenu" class="flexContainer justifySpaceBetween">
+
+	<img src="./images/Untitled-5.png"></img>
+	<div style="font-size:30px"class="fixedFlexItem">Search</div>
+</div>
+<div class="spacingBlock flexContainer justifyEnd">
+	<div id="mainScreenDescription" class="fixedFlexItem">test
+	</div>
+</div>
+<div id="largeTextContainer" class="flexContainer underlineWhite">
+	<div class="fixedFlexItem largeTextItem">
+		<div class="largeText active ">You</div>
+	</div>
+	<div class="fixedFlexItem largeTextItem">
+		<div class="largeText">Live</div>
+	</div>
+	<div class="fixedFlexItem largeTextItem">
+		<div class="largeText  ">All</div>
+	</div>
+</div>
+
+</div>
+<div id="tabContainer" class="flexContainer justifySpaceBetween">
+	<div class="flexContainer">
+		<a href='#!' class="fixedFlexItem">
+			<div id="Continue" class="tab  fixedFlexItem">Continue
+			</div>
+		</a>
+		<a href='#!' class="fixedFlexItem">
+			<div id="Following" class="tab fixedFlexItem">Following
+			</div>
+		</a>
+		<a href='#!' class="fixedFlexItem">
+			<div id="Recordings" class="tab fixedFlexItem">Recordings
+			</div>
+		</a>
+		<a href='#!' class="fixedFlexItem">
+			<div id="Rentals" class="tab fixedFlexItem">Rentals
+			</div>
+		</a>
+		<a href='#!' class="fixedFlexItem">
+			<div id="Friends" class="tab selectedTab fixedFlexItem">Friends
+			</div>
+		</a>
+		<a href='#!' class="fixedFlexItem">
+			<div id="Playlists" class="tab fixedFlexItem">Playlists
+			</div>
+		</a>
+		</div>
+	<a href="#!">
+		<div id="hiddenMenuController" class="ui-icon ui-icon-carat-1-n"></div>
+	</a>
+</div>
+
+<div id="filmStrip" class="flexContainer overflow">
+	<div id="filmStripItem0" class="filmStripItem active vertical fixedFlexItem flexContainer">
+		<button class="showFriend"><img src="./images/Friend1.jpg" class="fixedFlexItem"></img>
+		<div id="friendContainer0" class="friendContainer fixedFlexItem">
+			<p id="friendName0" class="friendName">You</p>
+			<p id="friendInfo0" class="friendInfo">@ZacharyReardon</p>
+		</div></button>
+	</div>	
+</div>
+
+<!-- friend sreen -->
+<section id="friendScreen">
+<div id="wrapper">
 
 		<section id="profileArea">
 
@@ -28,21 +330,31 @@
 		</section>
 		<div id="mid"></div>
 
-		<setion id="playlists">
-
-			<div class="content"><img class="contentImg"></div>
-			<div class="content"><img class="contentImg" ></div>
-			<div class="content"><img class="contentImg"></div>
-			<div class="content"><img class="contentImg"></div>
-			<div class="content"><img class="contentImg"></div>
-
-		</section>
-
+		<div id="filmStrip" class="flexContainer overflow">
+			<div id="filmStripItem0" class="filmStripItem active vertical fixedFlexItem flexContainer">
+				<img src="./images/Friend1.jpg" class="fixedFlexItem"></img>
+				<div id="friendContainer0" class="friendContainer fixedFlexItem">
+					<p id="friendName0" class="friendName">SmartQ</p>
+				</div>
+			</div>	
 		</div>
 
 
+		</div>
+</section>
+
+
+<script>
+	$(document).ready(function(){
+		  $('.showFriend').click(function(){
+  	$('#friendScreen').slideToggle(500); //toggle(effect, options, duration);
+ 	 });
+	});//end of document
+</script>
+</body>
+
+	<body>
+	<!--- Account ID confirmation-->
+
 	</body>
 </html>
-
-
-
